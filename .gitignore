@@ -1,2 +1,8 @@
-.Calculator/*
-.InteractiveCalculator/*
+.vs
+Debug
+Release
+bin
+obj
+Output
+*.VC.db
+*.VC.opendb
