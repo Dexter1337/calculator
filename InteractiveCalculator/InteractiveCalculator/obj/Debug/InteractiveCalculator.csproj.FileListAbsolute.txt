@@ -1,8 +1,0 @@
-D:\Programms\InteractiveCalculator\InteractiveCalculator\bin\Debug\InteractiveCalculator.exe.config
-D:\Programms\InteractiveCalculator\InteractiveCalculator\bin\Debug\InteractiveCalculator.exe
-D:\Programms\InteractiveCalculator\InteractiveCalculator\bin\Debug\InteractiveCalculator.pdb
-D:\Programms\InteractiveCalculator\InteractiveCalculator\obj\Debug\InteractiveCalculator.csproj.AssemblyReference.cache
-D:\Programms\InteractiveCalculator\InteractiveCalculator\obj\Debug\InteractiveCalculator.csproj.SuggestedBindingRedirects.cache
-D:\Programms\InteractiveCalculator\InteractiveCalculator\obj\Debug\InteractiveCalculator.csproj.CoreCompileInputs.cache
-D:\Programms\InteractiveCalculator\InteractiveCalculator\obj\Debug\InteractiveCalculator.exe
-D:\Programms\InteractiveCalculator\InteractiveCalculator\obj\Debug\InteractiveCalculator.pdb
