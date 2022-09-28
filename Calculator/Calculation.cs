@@ -4,29 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Calculator.Calculation;
+using CalculationLibrary;
+
 
 namespace Calculator
 {
     internal class Calculation
     {
+        CalculatorOperations library = new  CalculatorOperations();
         internal interface IOperation
         {
             double Call(params double[] args);
         }
-
         internal Dictionary<string, IOperation> operations;
-        internal List<string> oneArgumentOperation = new List<string>();
-        private static int CountArguments(string arguments)
-        {
-            arguments = arguments.Trim();
-            if (arguments.Length == 0)
-            {
-                return 0;
-            }
-            return arguments.Split().Length;
-        }
+        internal List<string> oneArgumentOperation = new List<string>(); 
         internal Calculation()
         {
+            
             oneArgumentOperation.Add("sinus");
             oneArgumentOperation.Add("cosinus");
             oneArgumentOperation.Add("tangens");
@@ -37,31 +31,12 @@ namespace Calculator
             operations.Add("+", new Operation((a, b) => a + b));
             operations.Add("-", new Operation((a, b) => a - b));
             operations.Add("*", new Operation((a, b) => a * b));
-            operations.Add("/", new Operation(Divide));
-            operations.Add("sinus", new Operation(Sinus));
-            operations.Add("percent", new Operation(Percent));          
-        }
-        private static double Sinus(double degree)
-        {
-            double radian;
-            radian = Math.Sin(degree * Math.PI / 180);
-            return radian;
-        }
-        private static double Divide(double num1, double num2)
-        {
-            if (num2 == 0)
-            {
-                Console.WriteLine("Division by 0 is not supported!");
-                return 0;
-            }
-            return num1 / num2;
-        }
-        private static double Percent(double num)
-        {
-            return num / 100;
+            operations.Add("/", new Operation(library.Divide));
+            operations.Add("sinus", new Operation(library.Sinus));
+            operations.Add("percent", new Operation(library.Percent));          
         }
     }
-    class Operation : IOperation
+    internal class Operation : IOperation
     {
         Func<double, double, double> operation;
         private Func<double, double> sinus;
