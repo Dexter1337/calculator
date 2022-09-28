@@ -9,15 +9,14 @@ namespace Calculator
 {
     internal class Calculation
     {
-        public interface IOperation
+        internal interface IOperation
         {
             double Call(params double[] args);
         }
 
-        static double res = 0;
-        public Dictionary<string, IOperation> operations;
-        public List<string> oneArgumentOperation = new List<string>();
-        public static int CountArguments(string arguments)
+        internal Dictionary<string, IOperation> operations;
+        internal List<string> oneArgumentOperation = new List<string>();
+        private static int CountArguments(string arguments)
         {
             arguments = arguments.Trim();
             if (arguments.Length == 0)
@@ -26,7 +25,7 @@ namespace Calculator
             }
             return arguments.Split().Length;
         }
-        public Calculation()
+        internal Calculation()
         {
             oneArgumentOperation.Add("sinus");
             oneArgumentOperation.Add("cosinus");
@@ -43,9 +42,7 @@ namespace Calculator
             operations.Add("cosinus", new Operation(Cosinus));
             operations.Add("tangens", new Operation(Tangens));
             operations.Add("cotangens", new Operation(Cotangens));
-            operations.Add("%", new Operation(Percent));
-
-            
+            operations.Add("%", new Operation(Percent));        
         }
         private static double Sinus(double degree)
         {
@@ -71,7 +68,7 @@ namespace Calculator
             radian = 1 / Math.Tan(degree * Math.PI / 180);
             return radian;
         }
-        public static double Divide(double num1, double num2)
+        private static double Divide(double num1, double num2)
         {
             if (num2 == 0)
             {
@@ -80,7 +77,7 @@ namespace Calculator
             }
             return num1 / num2;
         }
-        public static double Percent(double num)
+        private static double Percent(double num)
         {
             return num / 100;
         }
@@ -109,7 +106,6 @@ namespace Calculator
             {
                 return operation(args[0], args[1]);
             }
-        }
-        
+        }   
     }
 }
