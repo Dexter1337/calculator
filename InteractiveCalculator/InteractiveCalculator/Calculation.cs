@@ -16,7 +16,7 @@ namespace Calculator
 
         internal Dictionary<string, IOperation> operations;
         internal List<string> oneArgumentOperation = new List<string>();
-        private static int CountArguments(string arguments)
+        internal static int CountArguments(string arguments)
         {
             arguments = arguments.Trim();
             if (arguments.Length == 0)
